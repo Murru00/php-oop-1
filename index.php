@@ -1,42 +1,4 @@
 <?php
-class Production
-{
-    public $title;
-    public $language;
-    public $vote;
-
-    function __construct($title, $language, $vote)
-    {
-        $this->title = $title;
-        $this->language = $language;
-        $this->vote = $vote;
-    }
-}
-
-$fast&furious = new Production(
-    "Fast&furiousX",
-    "Inglese",
-    "10/10"
-);
-
-$Avengers = new Production(
-    "Avengers",
-    "Inglese",
-    "8/10"
-);
-
-$Forrest_Gump= new Production(
-    "Forrest Gump",
-    "Inglese",
-    "5/10"
-);
-
-$productions = [
-    $fast&furious,
-    $Avengers,
-    $Forrest_Gump
-];
-var_dump($productions)
 ?>
 
 
@@ -47,9 +9,64 @@ var_dump($productions)
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>php-oop-1</title>
-     <!-- BOOTS -->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- BOOTS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
+
 <body>
+    <div class="d-flex justify-content-center mt-5">
+        <?php foreach ($films as $film) : ?>
+            <ul>
+                <li>
+                    <b>Title:</b>
+                    <?php echo $film->get_title() ?>
+                </li>
+                <li>
+                    <b>Language:</b>
+                    <?php echo $film->language ?>
+
+                </li>
+                <li>
+                    <b>Vote:</b>
+                    <?php echo $film->vote ?>
+                </li>
+                <li>
+                    <b>Tipo:</b>
+                    <?php echo $film->genere->nome ?>
+                </li>
+                <li>
+                    <b>Descrizione:</b>
+                    <?php echo $film->genere->descrizione ?>
+                </li>
+
+
+                <?php if ($film instanceof Movie) : ?>
+                    <li>
+                        <b>Profittis:</b>
+                        <?php echo $film->money ?>
+                    </li>
+                    <li>
+                        <b>Durata:</b>
+                        <?php echo $film->duration ?>
+                    </li>
+                <?php endif ?>
+                <?php if ($film instanceof serieTV) : ?>
+                    <li>
+                        <b>Stagioni:</b>
+                        <?php echo $film->seasons ?>
+                    </li>
+                    <li>
+                        <b>Episodi:</b>
+                        <?php echo $film->episodes ?>
+                    </li>
+
+                <?php endif ?>
+            </ul>
+        <?php endforeach; ?>
+    </div>
+
+
 </body>
+
 </html>
