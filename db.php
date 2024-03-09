@@ -17,7 +17,7 @@ $Vacanze_2000 = new Movie(
     5,
     new Genre("Commedia", "Vacanze in montagna"),
     "20€",
-    50,
+    140,
 );
 
 $La_Preda = new Movie(
@@ -25,17 +25,17 @@ $La_Preda = new Movie(
     "Inglese",
     12,
     new Genre("fantasy", "Ex militare esce fuori di testa dalla guerra"),
-    "10$",
+    "10€",
     180,
 );
 
 $Avengers = new Movie(
-    "Gabriele va in campeggio",
+    "Avengers",
     "USA",
     10,
     new Genre("fantasy", "Salvano il pianeta da thanos"),
     "GRATIS",
-    120min,
+    120,
 
 );
 $Teen_Wolf = new serieTV(
@@ -44,7 +44,7 @@ $Teen_Wolf = new serieTV(
     100,
     new Genre("Action", "Lupi Mannari"),
     10,
-    20min,
+    20,
 
 );
 
