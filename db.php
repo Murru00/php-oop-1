@@ -1,52 +1,57 @@
-
 <?php
+require_once __DIR__ . "/models/serietv.php";
+require_once __DIR__ . "/models/movie.php";
 
 
 
 
 
-$Fast&Furious = new Movie(
-    "Fast and Furious solo parti originali",
-    "USA",
-    8,
-    new Genre("Action", "Dominic Toretto Salva la sua Famiglia"),
-    "10€",
-    90,
-);
 
-$Avengers = new Movie(
-    "Avengers end game",
-    "Inglese",
-    10,
-    new Genre("fantasy", "Salvano il pianeta sconfiggendo Thanos"),
-    "20€",
-    130,
-);
+
+//includere sia production che genre giusto per averli nel caso sposti tutto o ti vuoi portare dietro
+
 
 $Vacanze_2000 = new Movie(
     "Vacanze 2000",
     "Italiano",
-    7,
+    5,
     new Genre("Commedia", "Vacanze in montagna"),
+    "20€",
+    50,
+);
+
+$La_Preda = new Movie(
+    "La Preda",
+    "Inglese",
+    12,
+    new Genre("fantasy", "Ex militare esce fuori di testa dalla guerra"),
+    "10$",
+    180,
+);
+
+$Avengers = new Movie(
+    "Gabriele va in campeggio",
+    "USA",
+    10,
+    new Genre("fantasy", "Salvano il pianeta da thanos"),
     "GRATIS",
-    120,
+    120min,
 
 );
 $Teen_Wolf = new serieTV(
-    "Teen Wolf",
+    "Teen_Wolf",
     "USA",
     100,
     new Genre("Action", "Lupi Mannari"),
-    "GRATIS",
-    20,
+    10,
+    20min,
 
 );
 
 
 $films = [
-    $Fast&Furious,
-    $Avengers,
     $Vacanze_2000,
+    $La_Preda,
+    $Avengers,
     $Teen_Wolf
 ];
-// var_dump($films);

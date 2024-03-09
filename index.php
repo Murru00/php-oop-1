@@ -1,4 +1,17 @@
 <?php
+
+require_once __DIR__ . "/models/Production.php";
+require_once __DIR__ . "/models/Genre.php";
+require_once __DIR__ . "/db.php";
+require_once __DIR__ . "/models/serietv.php";
+require_once __DIR__ . "/models/movie.php";
+
+
+
+
+
+
+
 ?>
 
 
@@ -19,16 +32,16 @@
         <?php foreach ($films as $film) : ?>
             <ul>
                 <li>
-                    <b>Title:</b>
+                    <b>Titolo:</b>
                     <?php echo $film->get_title() ?>
                 </li>
                 <li>
-                    <b>Language:</b>
+                    <b>Lingua:</b>
                     <?php echo $film->language ?>
 
                 </li>
                 <li>
-                    <b>Vote:</b>
+                    <b>Voto:</b>
                     <?php echo $film->vote ?>
                 </li>
                 <li>
@@ -43,7 +56,7 @@
 
                 <?php if ($film instanceof Movie) : ?>
                     <li>
-                        <b>Profittis:</b>
+                        <b>Prezzo:</b>
                         <?php echo $film->money ?>
                     </li>
                     <li>
